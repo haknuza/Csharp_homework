@@ -13,16 +13,16 @@ class Program
         Type[] allTypes = asembly.GetTypes();
         List<Type> classes= new List<Type>();
 
-        int n = 1;
+        int n = 0;
         foreach (var type in allTypes)
         {
         
             if (type.IsClass && !type.Name.Contains("<") && typeof(Ihomework).IsAssignableFrom(type))
             {
+                n++;
                 classes.Add(type);
                 Console.WriteLine($"{n}. {type.FullName}");
             }
-            n++;
         }
         int choice;
         while (!Int32.TryParse(Console.ReadLine(), out choice))
@@ -31,6 +31,5 @@ class Program
         }
         var homework = (Ihomework)Activator.CreateInstance(classes[choice - 1]);
         homework.Run();
-
     }
 }
