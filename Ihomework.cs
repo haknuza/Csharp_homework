@@ -1,0 +1,4 @@
+interface Ihomework
+{
+    void Run();
+}
