@@ -3,13 +3,15 @@ class DigitSum : Ihomework
 {
     public void Run()
     {
+        Console.WriteLine("This program calculates the sum of the given number's digits");
+
         System.Console.WriteLine("Enter a number to sum the digits of that number: ");
         int num;
         while (!Int32.TryParse(Console.ReadLine(), out num))
         {
             Console.WriteLine("Please enter valid number...");
         }
-        Console.WriteLine(Calculate(num));
+        Console.WriteLine($"The sum of the digits is equal to {Calculate(num)}");
     }
     public static int Calculate(int num)
     {
