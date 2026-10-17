@@ -50,6 +50,7 @@ class ColderThan : Ihomework
     public static Hit[] isColderThan(Reading[][] readings, int limit)
     {
         var result = new List<Hit>();
+
         for (int i = 0; i < readings.Length; i++)
         {
             if (readings[i] == null) continue;
